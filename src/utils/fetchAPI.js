@@ -6,7 +6,7 @@ const options = {
   method: 'GET',
   url: BASE_URL,
   params: {
-    maxResults: '50',
+    maxResults: '48',
   },
   headers: {
     'X-RapidAPI-Key': process.env.REACT_APP_REPID_API_KEY,

@@ -1,14 +1,16 @@
 import React from 'react'
 import { SearchBar } from './'
+import { Link } from 'react-router-dom'
 
 import { SlSocialYoutube } from 'react-icons/sl'
-
 const HeaderCont = () => {
   return (
     <header id="header">
       <h1 className="logo">
-        <SlSocialYoutube className="icon" />
-        Dev Youtube
+        <Link to="/">
+          <SlSocialYoutube className="icon" />
+          Dev Youtube
+        </Link>
       </h1>
       <SearchBar />
 
