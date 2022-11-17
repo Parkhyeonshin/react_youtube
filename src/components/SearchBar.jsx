@@ -10,7 +10,7 @@ const SearchBar = () => {
         type="text"
         id="searchInput"
         className="input__searc"
-        placeholder="개발자 유튜버 검색"
+        placeholder="유튜버 검색"
         title="검색"
       />
     </div>

@@ -26,7 +26,9 @@ const VideoCard = ({
       </Link>
       <div className="boxInfo">
         <Link to={`/video/${videoId}`}>
-          <span className="videoTitle">{snippet?.title.slice(0, 48)}</span>
+          <span className="videoTitle">
+            {snippet?.title.slice(0, 100).replace(/&quot;/g, '"')}
+          </span>
         </Link>
         <Link to={`/channel/${snippet.channelId}`}>
           <span className="channelName">{snippet.channelTitle}</span>
