@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 // import { fetchAPI } from '../utils/fetchAPI'
 import test from '../utils/test.json'
 import { Category, Videos } from './'
-import $ from 'jquery'
 
 const MainConts = () => {
   const [selectCategory, setSelectCategory] = useState('webstoryboy')
