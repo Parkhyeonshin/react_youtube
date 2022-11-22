@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from 'react'
-// import { fetchAPI } from '../utils/fetchAPI'
-import test from '../utils/test.json'
+import { fetchAPI } from '../utils/fetchAPI'
+// import test from '../utils/test.json'
 import { Category, Videos } from './'
 
 const MainConts = () => {
-  const [selectCategory, setSelectCategory] = useState('webstoryboy')
-  // const [videos, setVideos] = useState(null)
-  // useEffect(() => {
-  //   fetchAPI(`search?part=snippet&q=music&type=video`).then((data) =>
-  //     setVideos(data.items)
-  //   )
-  // }, [selectCategory])
-  const [videos, setVideos] = useState(test.items)
+  const [selectCategory, setSelectCategory] = useState('예능')
+  const [videos, setVideos] = useState(null)
   useEffect(() => {
-    setVideos(test.items)
-  }, [])
+    fetchAPI(`search?part=snippet&q=${selectCategory}&type=video`).then(
+      (data) => setVideos(data.items)
+    )
+  }, [selectCategory])
+  // const [videos, setVideos] = useState(test.items)
+  // useEffect(() => {
+  //   setVideos(test.items)
+  // }, [])
 
   return (
     <main id="main">
       <aside id="aside">
         <Category
           selectCategory={selectCategory}
-          setSelectcategory={setSelectCategory}
+          setSelectCategory={setSelectCategory}
         />
       </aside>
 

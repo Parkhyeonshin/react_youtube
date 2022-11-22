@@ -1,7 +1,7 @@
 import React from 'react'
 import { categories } from '../utils/content'
 
-const Category = ({ selectCategory, setSelectcategory }) => {
+const Category = ({ selectCategory, setSelectCategory }) => {
   return (
     <div>
       {categories.map((category) => (
@@ -16,7 +16,7 @@ const Category = ({ selectCategory, setSelectcategory }) => {
                 : '0px solid #000',
           }}
           key={category.name}
-          onClick={() => setSelectcategory(category.name)}
+          onClick={() => setSelectCategory(category.name)}
         >
           <span>{category.icon}</span>
           <span>{category.name}</span>
