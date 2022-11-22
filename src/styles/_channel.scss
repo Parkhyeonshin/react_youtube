@@ -1,0 +1,59 @@
+#channelConts {
+  .channel-header {
+    height: 400px;
+    background: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  .channel-infoWrap {
+    width: 80%;
+    margin: 30px auto;
+    padding-left: 3%;
+    .channel-info {
+      width: 55%;
+      //   height: 200px;
+      //   background: #fff;
+      //   border-radius: 50%;
+      display: flex;
+      align-items: center;
+      > img {
+        border: 2px solid snow;
+        border-radius: 50%;
+        width: 20%;
+      }
+      > div {
+        width: 80%;
+        padding: 15px 0px 0px 15px;
+        > h3 {
+          width: 100%;
+          font-size: 25px;
+        }
+        > div {
+          width: 100%;
+          font-size: 13px;
+          opacity: 0.7;
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+  .channelcontainer {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 1220px) {
+  #channelConts {
+    .channel-infoWrap {
+      width: 100%;
+      margin: 30px auto;
+      padding-left: 3%;
+    }
+    .channelcontainer {
+      width: 100%;
+    }
+  }
+}

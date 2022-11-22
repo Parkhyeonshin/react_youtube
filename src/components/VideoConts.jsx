@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import ReactPlayer from 'react-player'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { fetchAPI } from '../utils/fetchAPI'
+import { Videos, Loader } from '../components'
 const VideoConts = () => {
   const [videoDetail, setVideoDetail] = useState(null)
   const [videos, setVideos] = useState(null)
@@ -15,10 +16,12 @@ const VideoConts = () => {
       (data) => setVideos(data.items)
     )
   }, [id])
-  // const {
-  //   snippet: { title, channelId, channelTitle },
-  //   statistics: { viewCount, likeCount },
-  // } = videoDetail
+  //   const {
+  //     snippet: { title, channelId, channelTitle },
+  //     statistics: { viewCount, likeCount },
+  //   } = videoDetail
+
+  if (!videos?.length) return <Loader />
   return (
     <section className="videoConts">
       <div className="container">
@@ -30,9 +33,32 @@ const VideoConts = () => {
                 controls
               />
             </div>
-            <div className="desc"></div>
+            <div className="desc">
+              <div className="tag">
+                {videoDetail.snippet?.tags.map((e, i) => (
+                  <span>#{e}</span>
+                ))}
+              </div>
+              <span className="title">{videoDetail.snippet?.title}</span>
+              <div className="channel">
+                <Link to={`/channel/${videoDetail.snippet?.channelId}`}>
+                  {videoDetail.snippet?.channelTitle}
+                </Link>
+              </div>
+              <div className="count">
+                <span className="view">
+                  조회수 : {videoDetail.statistics?.viewCount}회
+                </span>
+                <span className="Like">
+                  💕
+                  {videoDetail.statistics?.likeCount}
+                </span>
+              </div>
+            </div>
           </div>
-          <div className="right"></div>
+          <div className="right Viewside">
+            <Videos videos={videos} />
+          </div>
         </div>
       </div>
     </section>

@@ -2,7 +2,8 @@
 @import './fonts.scss';
 @import './header.scss';
 @import './main.scss';
-@import './videoView';
+@import './videoView.scss';
+@import './channel.scss';
 
 :root {
   --white: #fff;
@@ -22,5 +23,5 @@
 
 body {
   background-color: var(--bg-dark);
-  min-height: 100vh;
+  // min-height: 100vh;
 }
