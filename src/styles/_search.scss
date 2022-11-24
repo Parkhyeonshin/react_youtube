@@ -1,0 +1,27 @@
+.result {
+  margin-top: 150px;
+  margin-bottom: 85px;
+  text-align: center;
+  > em {
+    color: #a52a2a;
+  }
+}
+.searchVideo__inner {
+  width: 80%;
+  margin: 0 auto;
+}
+@media (max-width: 1300px) {
+  .searchVideo__inner {
+    width: 98% !important;
+  }
+}
+@media (max-width: 800px) {
+  .result {
+    margin-top: 200px;
+  }
+  .searchVideo__inner {
+    .box {
+      width: 48% !important;
+    }
+  }
+}

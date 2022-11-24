@@ -7,7 +7,10 @@
     border-right: 1px solid var(--bg-dark-border);
     padding: 30px;
     padding-left: 15px;
-
+    transition: left 0.5s ease;
+    .asideBtn {
+      display: none;
+    }
     button {
       display: block;
       margin-bottom: 15px;
@@ -110,6 +113,22 @@
         > span {
           font-size: 12px;
           opacity: 0.7;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  #main {
+    #aside {
+      width: 10%;
+      > div {
+        > button {
+          span {
+            &:last-child {
+            }
+          }
         }
       }
     }
